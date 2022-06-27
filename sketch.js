@@ -113,10 +113,19 @@ function shootBullet(){
 function handleBubbleCollision(bubbleGroup){
     //code to handle bubble collision
     if(bulletGroup.collide(bubbleGroup)){
+      score = score + 1;
       boom = createSprite(bullet.x,bullet.y,50,20)
       boom.scale = 0.2
       boom.lifetime = 50
       boom.addImage(blastImg)
+    }
+
+    if(bulletGroup.collide(redBubbleGroup)){
+      redbubble.destroy()
+    }
+
+    if(bulletGroup.collide(blueBubbleGroup)){
+      bluebubble.destroy()
     }
 }
 
